@@ -8,9 +8,15 @@
     <hello-world></hello-world>
     <script>
       class HelloWorld extends HTMLElement {
+        static get observedAttributes() { return ['attr']; }
+
         constructor() {
           super();
           this.render('Hello world');
+        }
+
+        attributeChangedCallback(attrName, oldVal, newVal) {
+          this.render(newVal);
         }
 
         render(innerText) {
