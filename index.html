@@ -10,7 +10,11 @@
       class HelloWorld extends HTMLElement {
         constructor() {
           super();
-          this.innerHTML = '<p>Hello world</p>';
+          this.render('Hello world');
+        }
+
+        render(innerText) {
+          this.innerHTML = `<p>${innerText}</p>`;
         }
       }
 
