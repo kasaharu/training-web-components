@@ -10,6 +10,14 @@
       class HelloWorld extends HTMLElement {
         static get observedAttributes() { return ['attr']; }
 
+        set attr(value) {
+          if (value) {
+            this.setAttribute('attr', value);
+          } else {
+            this.removeAttribute('attr');
+          }
+        }
+
         constructor() {
           super();
           this.render('Hello world');
