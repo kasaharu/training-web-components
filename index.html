@@ -11,6 +11,7 @@
   </head>
   <body>
     <hello-world></hello-world>
+    <hello-world-color-red></hello-world-color-red>
     <script>
       class HelloWorld extends HTMLElement {
         static get observedAttributes() { return ['attr']; }
@@ -41,7 +42,24 @@
         }
       }
 
+      class HelloWorldColorRed extends HTMLElement {
+        constructor() {
+          super();
+
+          const style = document.createElement('style');
+          style.innerText = 'p { color: red; }';
+
+          this.appendChild(style);
+
+          const text = document.createElement('p');
+          text.innerText = 'Hello world color red';
+
+          this.appendChild(text);
+        }
+      }
+
       window.customElements.define('hello-world', HelloWorld);
+      window.customElements.define('hello-world-color-red', HelloWorldColorRed);
     </script>
   </body>
 </html>
