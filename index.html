@@ -46,15 +46,17 @@
         constructor() {
           super();
 
+          const shadoRoot = this.attachShadow({ mode: 'open' });
+
           const style = document.createElement('style');
           style.innerText = 'p { color: red; }';
 
-          this.appendChild(style);
+          shadoRoot.appendChild(style);
 
           const text = document.createElement('p');
           text.innerText = 'Hello world color red';
 
-          this.appendChild(text);
+          shadoRoot.appendChild(text);
         }
       }
 
