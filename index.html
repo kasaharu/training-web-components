@@ -47,31 +47,7 @@
         }
       }
 
-      class HelloWorldColorRed extends HTMLElement {
-        constructor() {
-          super();
-
-          const shadoRoot = this.attachShadow({ mode: 'open' });
-
-          const style = document.createElement('style');
-          style.innerText =
-            ':host { border: 1px solid; display: inline-block; }' +
-            'p { color: red; }';
-
-          shadoRoot.appendChild(style);
-
-          const text = document.createElement('p');
-          text.innerText = 'Hello world color red';
-
-          shadoRoot.appendChild(text);
-
-          const slot = document.createElement('slot');
-          shadoRoot.appendChild(slot);
-        }
-      }
-
       window.customElements.define('hello-world', HelloWorld);
-      window.customElements.define('hello-world-color-red', HelloWorldColorRed);
     </script>
   </body>
 </html>

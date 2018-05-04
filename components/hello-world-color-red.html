@@ -1,0 +1,28 @@
+<!-- components/hello-world-color-red.html -->
+<template id="hello-world-color-red">
+  <style>
+    :host {
+      border: 1px solid;
+      display: inline-block;
+    }
+    p {
+      color: red;
+    }
+  </style>
+  <p>Hello world color red</p>
+  <slot></slot>
+</template>
+<script>
+  class HelloWorldColorRed extends HTMLElement {
+    constructor() {
+      super();
+
+      const doc = document.currentScript.ownerDocument;
+      const shadowRoot = this.attachShadow({ mode: 'open' });
+      const template = doc.getElementById('hello-world-color-red').content;
+
+      shadowRoot.appendChild(template.cloneNode(true));
+    }
+  }
+  window.customElements.define('hello-world-color-red', HelloWorldColorRed);
+</script>
