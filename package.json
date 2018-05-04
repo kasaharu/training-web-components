@@ -1,0 +1,8 @@
+{
+  "name": "training-web-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:kasaharu/training-web-components.git",
+  "author": "Wataru.Kasahara <kasahara1019@gmail.com>",
+  "license": "MIT"
+}
