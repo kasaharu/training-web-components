@@ -64,6 +64,9 @@
           text.innerText = 'Hello world color red';
 
           shadoRoot.appendChild(text);
+
+          const slot = document.createElement('slot');
+          shadoRoot.appendChild(slot);
         }
       }
 
