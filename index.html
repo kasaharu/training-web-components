@@ -49,7 +49,9 @@
           const shadoRoot = this.attachShadow({ mode: 'open' });
 
           const style = document.createElement('style');
-          style.innerText = 'p { color: red; }';
+          style.innerText =
+            ':host { border: 1px solid; display: inline-block; }' +
+            'p { color: red; }';
 
           shadoRoot.appendChild(style);
 
